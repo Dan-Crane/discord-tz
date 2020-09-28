@@ -1,0 +1,32 @@
+.content {
+	&__header {
+		background-color: var(--background-primary);
+
+		position: relative;
+		display: flex;
+		align-items: center;
+		min-width: 0;
+		width: 100%;
+		flex: 0 0 auto;
+		height: 48px;
+		padding: 0 8px;
+		cursor: default;
+		z-index: 2;
+		color: var(--text-normal);
+
+		border-bottom: var(--border-bottom);
+
+	}
+
+	&__title {
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 700;
+	}
+
+	&__icon {
+		margin: 0 8px;
+		width: 16px;
+		height: 16px;
+	}
+}

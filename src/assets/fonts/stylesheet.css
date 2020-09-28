@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Whitney';
+    src: url('Whitney-Black.woff2') format('woff2'),
+        url('Whitney-Black.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('Whitney-Bold.woff2') format('woff2'),
+        url('Whitney-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('Whitney-Medium.woff2') format('woff2'),
+        url('Whitney-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('Whitney-Light.woff2') format('woff2'),
+        url('Whitney-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
