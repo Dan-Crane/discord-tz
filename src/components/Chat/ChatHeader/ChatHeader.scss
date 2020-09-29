@@ -1,5 +1,7 @@
 .content {
 	&__header {
+		grid-area: header;
+
 		background-color: var(--background-primary);
 
 		position: relative;

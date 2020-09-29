@@ -1,0 +1,42 @@
+.item-message {
+	display: flex;
+	gap: 12px;
+	border-radius: 4px;
+	padding: 2px 0 2px 16px;
+
+	&__ava {
+		width: 40px;
+		height: 40px;
+		grid-area: ava;
+	}
+
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__name {
+		color: var(--text-normal);
+		font-weight: 500;
+
+		line-height: 22px;
+		font-size: 18px;
+		margin-bottom: 4px;
+	}
+
+	&__date {
+
+	}
+
+	&__text {
+		color: var(--text-hover);
+		font-weight: 400;
+
+	}
+	&:hover{
+		background-color: var(--background-hover-color);
+	}
+
+
+
+}

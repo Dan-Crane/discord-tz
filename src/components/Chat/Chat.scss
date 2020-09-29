@@ -4,8 +4,15 @@
 	--border-bottom: 1px solid #222427;
 }
 
-.content{
+.chat{
 	height: 100vh;
 	width: 100%;
 	background-color: #36393f;
+	display: grid;
+	justify-items: stretch;
+
+	grid-template: "header header" auto
+	"chat sidebar" auto;
+	grid-template-columns: 1fr 240px;
+	grid-template-rows: 48px calc(100% - 48px);
 }
