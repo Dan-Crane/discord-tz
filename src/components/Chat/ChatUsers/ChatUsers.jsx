@@ -13,6 +13,7 @@ export function ChatUsers(props) {
 	const {visible, setVisible, ref} = useOutsideAlerter()
 
 	const [activeUser, setActiveUser] = useState(null)
+	const [valueNode, setValueNode] = useState('')
 
 	function handleSelect(user) {
 		setActiveUser(user)
@@ -20,30 +21,34 @@ export function ChatUsers(props) {
 	}
 
 	return (
-		<div className='chat__users users-chat' >
+		<div className='chat__users users-chat'>
 			{
 				visible &&
-				<div className='chat__users-popup chat-users-popup' ref={ref} >
+				<div className='chat__users-popup chat-users-popup' ref={ref}>
 					<div className='chat-users-popup__header'>
 						<img
-							src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VM6bv6ifg8PgNRd7xz64BAHaHa%26pid%3DApi&f=1'
+							src={activeUser.img}
 							alt="ava"/>
 						<span className='chat-users-popup__name'>
-						{/*{profile.name}*/}
-							dima test
+						{activeUser.name}
 					</span>
 					</div>
 					<div className='chat-users-popup__body'>
 						<span className='chat-users-popup__role-head'>Нет ролей</span>
-						<span className='chat-users-popup__role-body'>админ</span>
+						{activeUser.role && <span className='chat-users-popup__role-body'>{activeUser.role}</span>}
 						<span className='chat-users-popup__node-head'>Заметка</span>
-						<input className='chat-users-popup__node-body'/>
-						<input className='chat-users-popup__message'/>
+						<input className='chat-users-popup__node-body'
+									 placeholder='Нажмите чтобы добавить заметку'
+									 value={valueNode}
+									 onChange={(e) => setValueNode(e.target.value)}
+									 onBlur={() => console.log(valueNode)}/>
+						<input className='chat-users-popup__message'
+									 placeholder='Введите сообдение'/>
 					</div>
 				</div>
 			}
 			<div className='users-chat__online'>
-				<h1>В сети</h1>
+				<h3>В сети</h3>
 				{users.map(u => <ChatUsersItem key={u.id} profile={u} onSelect={handleSelect}/>)}
 			</div>
 		</div>

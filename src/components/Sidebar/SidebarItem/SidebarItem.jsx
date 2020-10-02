@@ -4,10 +4,12 @@ import './SidebarItem.scss'
 
 import {NavLink} from "react-router-dom";
 
-export function SidebarItem({ name }) {
+export function SidebarItem( props ) {
+	const { name, id } = props
+
 	return (
 		<li className='sidebar__item'>
-			<NavLink to='/' activeClassName='active'>
+			<NavLink to={`/room/${id}`} activeClassName='active'>
 				<svg className="icon-pound sidebar__icon">
 					<use xlinkHref="#icon-pound"/>
 				</svg>

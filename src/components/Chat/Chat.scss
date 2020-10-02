@@ -12,8 +12,17 @@
 	justify-items: stretch;
 
 	grid-template: "header header" auto
-	"chat sidebar" auto;
+	"chat users" auto;
 	grid-template-columns: 1fr 240px;
 	grid-template-rows: 48px calc(100% - 48px);
 
+	&__warning{
+		text-transform: uppercase;
+		font-size: 32px;
+		letter-spacing: 2.5px;
+		color: var(--text-normal);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
 }

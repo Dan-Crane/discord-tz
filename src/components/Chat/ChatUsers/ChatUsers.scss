@@ -1,5 +1,7 @@
 .chat{
 	&__users{
+		grid-area: users;
+		position: relative;
 		background-color: var(--background-color);
 	}
 	&__users-popup{
@@ -8,5 +10,134 @@
 }
 
 .chat-users-popup{
+	position: absolute;
+	top: 10px;
+	left: -260px;
 
+	width: 250px;
+	height: 360px;
+	background-color: var(--background-dark);
+
+
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,.2), 0 0 0 1px rgba(32,34,37,.6);
+	border-radius: 5px;
+	overflow: hidden;
+	max-height: calc(100vh - 20px);
+	display: flex;
+	flex-direction: column;
+	&__header{
+		padding: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		img{
+			max-width: 80px;
+			border-radius: 50%;
+			margin-bottom: 10px;
+		}
+		span{
+			font-weight: 600;
+			font-size: 20px;
+			color: #ffffff;
+		}
+	}
+	&__body{
+		flex: 1 1 auto;
+		padding: 14px 20px;
+		background-color: #2f3136;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		font-size: 12px;
+	}
+	&__role-head{
+		color: var(--header-secondary);
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 4px;
+	}
+	&__role-body{
+		font-weight: 400;
+		text-transform: uppercase;
+		color: var(--header-secondary);
+		margin-bottom: 4px;
+		margin-left: 16px;
+	}
+	&__node-head{
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--header-secondary);
+		margin-bottom: 4px;
+	}
+	&__node-body{
+		height: 35px;
+		font-weight: 400;
+		margin-bottom: 16px;
+		border-radius: 4px;
+		outline: none;
+
+		background-color: transparent;
+		border: none;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		color: var(--text-normal);
+		font-size: 12px;
+		line-height: 14px;
+		max-height: 88px;
+		padding: 4px;
+		resize: none;
+		width: 100%;
+		&:active{
+			background-color: var(--background-primary);
+			border: none;
+		}
+		&:focus{
+
+			background-color: var(--background-primary);
+			border: none;
+		}
+	}
+	&__message{
+		height: 35px;
+		font-size: 14px;
+
+		font-weight: 400;
+		color: var(--header-secondary);
+		margin-bottom: 16px;
+		border: 1px solid var(--background-dark);
+		border-radius: 4px;
+		background-color: #2a2c30;
+		width: 100%;
+		padding: 4px;
+		outline: none;
+
+		&:active{
+			background-color: var(--background-primary);
+					border: 1px solid indianred;
+		}
+		&:focus{
+		border: 1px solid indianred;
+			background-color: var(--background-primary);
+		}
+	}
+}
+
+.users-chat{
+	&__online{
+		h3 {
+			padding: 14px 4px 0 10px;
+
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			text-transform: uppercase;
+			font-size: 12px;
+			line-height: 16px;
+			font-weight: 600;
+			flex: 1 1 auto;
+			color: var(--text-color);
+			margin-bottom: 4px;
+		}
+	}
 }

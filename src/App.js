@@ -14,25 +14,23 @@ function App() {
   return (
     <div className='app'>
       <Sidebar>
-        <SidebarMenu name='sidebar menu 1'>
-          <SidebarItem name='test'>
-
-          </SidebarItem>
-          <SidebarItem name='test1'>
-
-          </SidebarItem>
-          <SidebarItem name='test2'>
-
-          </SidebarItem>
-          <SidebarItem name='test3'>
-
-          </SidebarItem>
+        <SidebarMenu name='home'>
+          <SidebarItem name='welcome' id='1'/>
+        </SidebarMenu>
+        <SidebarMenu name='info'>
+          <SidebarItem name='info test'/>
+        </SidebarMenu>
+        <SidebarMenu name='work'>
+          <SidebarItem name='work test'/>
+          <SidebarItem name='work test'/>
+          <SidebarItem name='work test'/>
+          <SidebarItem name='work test'/>
+          <SidebarItem name='work test'/>
         </SidebarMenu>
       </Sidebar>
 
-      <Chat>
+      <Chat/>
 
-      </Chat>
     </div>
   );
 }
