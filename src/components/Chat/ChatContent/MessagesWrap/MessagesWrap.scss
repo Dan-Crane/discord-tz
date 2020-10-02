@@ -1,6 +1,7 @@
 .messages-wrap{
 	overflow-x: auto;
 	max-height: 100%;
+	flex: 1 1 auto;
 
 	&::-webkit-scrollbar-button {
 		background-repeat:no-repeat;

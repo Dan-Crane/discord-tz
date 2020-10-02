@@ -8,12 +8,31 @@
 	--background-selected-color: rgb(79 84 92 / 32%);
 }
 
+.sidebar-wrap{
+	position: relative;
+&__popup{
+
+}
+}
+
+.popup-sidebar-wrap{
+	z-index: 10;
+	width: 250px;
+	height: 300px;
+	position: absolute;
+	left: -250px;
+	top: 0;
+}
+
 .sidebar{
 	height: 100vh;
 	width: 240px;
 	background-color: var(--background-color);
-	overflow: auto;
-
+	overflow-x: visible;
+	overflow-y: inherit;
+	&--chat{
+		height: 100%;
+	}
 
 	&::-webkit-scrollbar-button {
 		background-repeat:no-repeat;

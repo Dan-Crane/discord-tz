@@ -11,8 +11,6 @@ export function ChatForm({}) {
 
 	useEffect(() => {
 		oldHeight = ref.current.scrollHeight
-		console.log(oldHeight);
-		console.log(ref.current.scrollHeight);
 
 		ref.current.style.height = 'auto';
 		newHeight = +ref.current.scrollHeight

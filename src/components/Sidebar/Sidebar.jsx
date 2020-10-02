@@ -1,12 +1,14 @@
 import React from "react";
 
-import  './Sidebar.scss'
+import './Sidebar.scss'
 
-export const Sidebar = ({ user, children }) => {
+export const Sidebar = (props) => {
+	const {user, children, chat} = props
 	return (
-		<nav className='sidebar'>
-			{children}
-			{user}
-		</nav>
+
+			<nav className={`sidebar${chat ? ' sidebar--chat' : ''}`}>
+				{children}
+				{user}
+			</nav>
 	)
 }
