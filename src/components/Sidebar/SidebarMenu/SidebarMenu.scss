@@ -45,4 +45,16 @@
 		flex-direction: column;
 		position: relative;
 	}
+	&__warning{
+		cursor: default;
+		margin: 0 8px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		color: indianred;
+
+		padding: 2px 8px;
+		border-radius: 4px;
+		text-decoration: none;
+	}
 }

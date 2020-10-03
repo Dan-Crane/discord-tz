@@ -19,7 +19,7 @@ export function SidebarMenu({children, name}) {
 			</div>
 
 			{open && <ul className='sidebar__list'>
-				{children}
+				{children || <div className='sidebar__warning'>Комната пуста</div>}
 			</ul>}
 		</div>
 	)

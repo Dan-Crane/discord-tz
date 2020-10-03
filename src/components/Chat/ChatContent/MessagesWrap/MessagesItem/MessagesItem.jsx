@@ -2,7 +2,7 @@ import React from "react";
 
 import './MessagesItem.scss'
 
-export function MessagesItem({message, children}) {
+export function MessagesItem({message}) {
 	return (
 		<div className='messages__item item-message'>
 			<img src={message.user.img} alt="avatar" className='item-message__ava'/>
@@ -14,7 +14,7 @@ export function MessagesItem({message, children}) {
 					{/*{message.date}*/}
 				</span>
 				<span className='item-message__text'>
-					{message.message}
+					{message.text}
 				</span>
 			</div>
 		</div>

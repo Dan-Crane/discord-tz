@@ -1,5 +1,8 @@
 import React from "react";
 
+import {useStore} from "../../../hooks/store";
+import {useParams} from "react-router-dom";
+
 import './ChatContent.scss'
 import {MessagesWrap} from "./MessagesWrap/MessagesWrap";
 import {MessagesItem} from "./MessagesWrap/MessagesItem/MessagesItem";
@@ -48,12 +51,23 @@ const test = [
 	},
 ]
 
-export function ChatContent() {
+export function ChatContent( props ) {
+	const { messages } = props
+
+	const {state} = useStore()
+
+	let { id } = useParams()
+	let messageArr = state.messages.filter(m=> m.roomId === +id)
+	let messagesAndUsers = messageArr.map(m => ({...m, user: state.people.find(p=> p.id === m.userId)}))
+	console.log(messagesAndUsers );
+
+
 	return (
 		<div className='chat__content'>
 			<MessagesWrap>
-				{test.map(m=> <MessagesItem key={m.id} message={m}/>)}
+				{messagesAndUsers && messagesAndUsers.map(m=> <MessagesItem key={m.id} message={m}/>)}
 			</MessagesWrap>
+
 			<ChatForm>
 
 			</ChatForm>

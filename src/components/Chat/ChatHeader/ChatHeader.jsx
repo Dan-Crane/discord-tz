@@ -1,15 +1,23 @@
 import React from "react";
 
-import './ChatHeader.scss'
+import {useLocation} from 'react-router-dom'
 
-export function ChatHeader({text}) {
+import './ChatHeader.scss'
+import {useStore} from "../../../hooks/store";
+
+export function ChatHeader(props) {
+	const {state} = useStore()
+
+	let idRoom = useLocation().pathname.split('/')[2];
+	let test = state.rooms.find(r => r.id === +idRoom).name
+
 	return (
 		<div className='content__header'>
 			<svg className="icon-pound content__icon">
 				<use xlinkHref="#icon-pound"/>
 			</svg>
 			<h1 className='content__title'>
-				{text}
+				{test}
 			</h1>
 		</div>
 	)

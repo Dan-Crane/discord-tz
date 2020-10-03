@@ -5,10 +5,13 @@ import {useOutsideAlerter} from "../../../hooks/OutsideAlerter";
 import './ChatUsers.scss'
 
 import {ChatUsersItem} from "./ChatUsersItem/ChatUsersItem";
+import {useStore} from "../../../hooks/store";
 
 
 export function ChatUsers(props) {
 	const {users} = props
+
+	const {state} = useStore()
 
 	const {visible, setVisible, ref} = useOutsideAlerter()
 
@@ -49,7 +52,7 @@ export function ChatUsers(props) {
 			}
 			<div className='users-chat__online'>
 				<h3>В сети</h3>
-				{users.map(u => <ChatUsersItem key={u.id} profile={u} onSelect={handleSelect}/>)}
+				{state.people.map(u => <ChatUsersItem key={u.id} profile={u} onSelect={handleSelect}/>)}
 			</div>
 		</div>
 	)
