@@ -48,7 +48,7 @@ const test = [
 	},
 ]
 
-export function ChatContent({children}) {
+export function ChatContent() {
 	return (
 		<div className='chat__content'>
 			<MessagesWrap>

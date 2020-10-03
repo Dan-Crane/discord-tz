@@ -11,7 +11,6 @@ export function Chat() {
 	return (
 		<section className='chat'>
 			<ChatHeader text='test'/>
-
 			<Switch>
 				<Route path="/room/:id?">
 					<ChatContent/>
@@ -20,13 +19,24 @@ export function Chat() {
 					<h1 className='chat__warning'>Выберите комнату</h1>
 				</Route>
 			</Switch>
-
 			<ChatUsers users={[{
 				name: 'Dima',
 				img: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.goldtalk.com%2Fforum%2Fimages%2Favatars%2Fall%2Famusing%2F80x80_garfield0005.jpg&f=1&nofb=1',
 				status: 'test status',
 				id: 1
-			}]}/>
+			},
+				{
+					name: 'Dima',
+					img: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.goldtalk.com%2Fforum%2Fimages%2Favatars%2Fall%2Famusing%2F80x80_garfield0005.jpg&f=1&nofb=1',
+					status: 'test status',
+					id: 2
+				},
+				{
+					name: 'Dima',
+					img: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.goldtalk.com%2Fforum%2Fimages%2Favatars%2Fall%2Famusing%2F80x80_garfield0005.jpg&f=1&nofb=1',
+					status: 'test status',
+					id: 3
+				}]}/>
 		</section>
 	)
 }
