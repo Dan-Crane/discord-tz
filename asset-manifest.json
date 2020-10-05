@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/discord-tz/static/css/main.93bdc339.chunk.css",
+    "main.js": "/discord-tz/static/js/main.b5ebf09e.chunk.js",
+    "main.js.map": "/discord-tz/static/js/main.b5ebf09e.chunk.js.map",
+    "runtime-main.js": "/discord-tz/static/js/runtime-main.9127119c.js",
+    "runtime-main.js.map": "/discord-tz/static/js/runtime-main.9127119c.js.map",
+    "static/js/2.d20a69ca.chunk.js": "/discord-tz/static/js/2.d20a69ca.chunk.js",
+    "static/js/2.d20a69ca.chunk.js.map": "/discord-tz/static/js/2.d20a69ca.chunk.js.map",
+    "index.html": "/discord-tz/index.html",
+    "precache-manifest.28933675809451e10a97327ba75af436.js": "/discord-tz/precache-manifest.28933675809451e10a97327ba75af436.js",
+    "service-worker.js": "/discord-tz/service-worker.js",
+    "static/css/main.93bdc339.chunk.css.map": "/discord-tz/static/css/main.93bdc339.chunk.css.map",
+    "static/js/2.d20a69ca.chunk.js.LICENSE.txt": "/discord-tz/static/js/2.d20a69ca.chunk.js.LICENSE.txt",
+    "static/media/stylesheet.css": "/discord-tz/static/media/Whitney-Medium.a37b6d9d.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9127119c.js",
+    "static/js/2.d20a69ca.chunk.js",
+    "static/css/main.93bdc339.chunk.css",
+    "static/js/main.b5ebf09e.chunk.js"
+  ]
+}
