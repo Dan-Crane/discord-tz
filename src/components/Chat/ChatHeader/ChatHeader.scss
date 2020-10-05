@@ -24,11 +24,21 @@
 		font-size: 16px;
 		line-height: 20px;
 		font-weight: 700;
+		animation: show 300ms;
 	}
 
 	&__icon {
 		margin: 0 8px;
 		width: 16px;
 		height: 16px;
+	}
+}
+
+@keyframes show {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
 	}
 }
