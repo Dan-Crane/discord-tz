@@ -1,8 +1,12 @@
 import React, {useEffect, useRef, useState} from "react";
+import {useStore} from "../../../../hooks/store";
 
 import './ChatForm.scss'
 
-export function ChatForm({}) {
+export function ChatForm(prors) {
+	const {onMessage, roomId} = prors
+
+	const {state} = useStore()
 	const [value, setValue] = useState('')
 	const ref = useRef(null)
 	let oldHeight = +document.activeElement.scrollHeight
@@ -25,13 +29,18 @@ export function ChatForm({}) {
 
 
 	return (
-		<form className='chat__form form-chat'>
+		<form className='chat__form form-chat' onSubmit={(e) => {
+			e.preventDefault()
+			if (value.length === 0) return
 
-			<textarea ref={ref}
-								className='form-chat__textarea'
-								value={value}
-								onChange={(e) => setValue(e.target.value)}>
-			</textarea>
+			onMessage(+roomId, state.user.id, value)
+			setValue('')
+		}}>
+			<input ref={ref}
+						 className='form-chat__textarea'
+						 value={value}
+						 onChange={(e) => setValue(e.target.value)}>
+			</input>
 		</form>
 	)
 }

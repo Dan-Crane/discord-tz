@@ -1,7 +1,22 @@
-export const deleteTask = (taskId) => ({
-	type: 'DELETE_TASK',
+export const editPerson = (personId, text) => ({
+	type: 'EDIT_PERSON',
 	payload: {
-		taskId
+		text,
+		personId
 	}
 })
 
+export const setActiveUser = (user) => ({
+	type: 'SET_ACTIVE_USER',
+	payload: {
+		user
+	}
+})
+
+	export const sendMessage = (obj) => ({
+		type: 'SEND_MESSAGE',
+		payload: {
+			obj
+		}
+	}
+)

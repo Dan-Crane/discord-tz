@@ -1,5 +1,13 @@
 export const initialState = {
-	user: null,
+	user: {
+		id: 11,
+		name: 'UserName',
+		status: 'Король королей',
+		role: 'Король королей',
+		node: 'Король королей',
+		img: '',
+		online: true
+	},
 	server: [
 		{
 			id: 1,
@@ -109,6 +117,24 @@ export const initialState = {
 			userId: 5,
 			text: 'Ой, антон как всегда...😒'
 		},
+		{
+			id: 8,
+			roomId: 4,
+			userId: 3,
+			text: 'На счет новенького. Я бы поработал с ним. Как раз интерфейс нид построить. Брать будете?'
+		},
+		{
+			id: 9,
+			roomId: 4,
+			userId: 3,
+			text: 'Он еще и React знает! вообще круто'
+		},
+		{
+			id: 10,
+			roomId: 4,
+			userId: 4,
+			text: 'Да, я бы тоже с ним поработала'
+		},
 	],
 	people: [
 		{
@@ -117,7 +143,8 @@ export const initialState = {
 			status: 'Работа прежде всего!',
 			role: 'Админ',
 			node: 'Тут будет заметка',
-			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.5l6NuHjFQzKcVPhPys9XrgHaHa%26pid%3DApi&f=1'
+			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.5l6NuHjFQzKcVPhPys9XrgHaHa%26pid%3DApi&f=1',
+			online: true
 		},
 		{
 			id: 2,
@@ -125,7 +152,8 @@ export const initialState = {
 			status: 'Отдых ван лаф!',
 			role: 'тестировщик',
 			node: 'Тут будет заметка',
-			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lLNTTZyUEASliSpFe7qLUgHaHa%26pid%3DApi&f=1'
+			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lLNTTZyUEASliSpFe7qLUgHaHa%26pid%3DApi&f=1',
+			online: true
 		},
 		{
 			id: 3,
@@ -133,7 +161,8 @@ export const initialState = {
 			status: 'Трудяга работяга!',
 			role: 'Hunter',
 			node: 'Тут будет заметка',
-			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.UPjIS3BJIb18IZPFPdmjpQHaHa%26pid%3DApi&f=1'
+			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.UPjIS3BJIb18IZPFPdmjpQHaHa%26pid%3DApi&f=1',
+			online: true
 		},
 		{
 			id: 4,
@@ -141,7 +170,8 @@ export const initialState = {
 			status: 'Творчество в каждом из нас',
 			role: 'HR manager',
 			node: '',
-			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.MR40vakaaJi1AOgAE0mMgAHaHa%26pid%3DApi&f=1'
+			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.MR40vakaaJi1AOgAE0mMgAHaHa%26pid%3DApi&f=1',
+			online: false
 		},
 		{
 			id: 5,
@@ -149,7 +179,46 @@ export const initialState = {
 			status: 'Сложный подросток',
 			role: 'Тестировщик',
 			node: '',
-			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.QGHhEaTTjwiDInIQ4NvnYQHaHa%26pid%3DApi&f=1'
+			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.QGHhEaTTjwiDInIQ4NvnYQHaHa%26pid%3DApi&f=1',
+			online: true
+		},
+		{
+			id: 6,
+			name: 'Кирилл',
+			status: '',
+			role: '',
+			node: '',
+			img: '',
+			online: false
+		},
+		{
+			id: 7,
+			name: 'Иван',
+			status: '',
+			role: '',
+			node: '',
+			img: '',
+			online: false
+		},
+		{
+			id: 8,
+			name: 'игорь',
+			status: '',
+			role: '',
+			node: '',
+			img: '',
+			online: false
+		},
+		{
+			id: 11,
+			name: 'UserName',
+			status: 'Король королей',
+			role: 'Король королей',
+			node: 'Король королей',
+			img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.B6Mzdq8gxzd7C8Gi5grE3gHaHa%26pid%3DApi&f=1',
+			online: true
 		},
 	],
+	activeUser: null,
+
 }

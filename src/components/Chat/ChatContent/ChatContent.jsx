@@ -1,76 +1,51 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {useStore} from "../../../hooks/store";
 import {useParams} from "react-router-dom";
 
 import './ChatContent.scss'
+
 import {MessagesWrap} from "./MessagesWrap/MessagesWrap";
 import {MessagesItem} from "./MessagesWrap/MessagesItem/MessagesItem";
 import {ChatForm} from "./ChatForm/ChatForm";
 
-const test = [
-	{
-		id: 1,
-		message: 'test 1',
-		user:
-			{
-				id: 1,
-				name: 'Dima',
-				img: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Favatarbox.net%2Favatars%2Fimg33%2Fstewie_raygun_avatar_picture_60581.gif&f=1&nofb=1'
-			},
-	},
-	{
-		id: 2,
-		message: 'test 2',
-		user:
-			{
-				id: 1,
-				name: 'Test',
-				img: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Favatarbox.net%2Favatars%2Fimg33%2Fstewie_raygun_avatar_picture_60581.gif&f=1&nofb=1'
-			},
-	},
-	{
-		id: 3,
-		message: 'test 3',
-		user:
-			{
-				id: 1,
-				name: 'Test',
-				img: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Favatarbox.net%2Favatars%2Fimg33%2Fstewie_raygun_avatar_picture_60581.gif&f=1&nofb=1'
-			},
-	},
-	{
-		id: 4,
-		message: 'test 4',
-		user:
-			{
-				id: 1,
-				name: 'Test',
-				img: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Favatarbox.net%2Favatars%2Fimg33%2Fstewie_raygun_avatar_picture_60581.gif&f=1&nofb=1'
-			},
-	},
-]
-
-export function ChatContent( props ) {
-	const { messages } = props
+export function ChatContent(props) {
+	const {messages, onMessage} = props
+	const ref = useRef()
 
 	const {state} = useStore()
 
-	let { id } = useParams()
-	let messageArr = state.messages.filter(m=> m.roomId === +id)
-	let messagesAndUsers = messageArr.map(m => ({...m, user: state.people.find(p=> p.id === m.userId)}))
-	console.log(messagesAndUsers );
+	let {id} = useParams()
+	let messageArr = state.messages.filter(m => m.roomId === +id)
+	let messagesAndUsers = messageArr.map(m => ({...m, user: state.people.find(p => p.id === m.userId)}))
 
+	function scroll() {
+		ref.current.scrollIntoView({behavior: "smooth"});
+	}
+
+	useEffect(() => {
+		scroll()
+	}, [messagesAndUsers.length])
 
 	return (
 		<div className='chat__content'>
 			<MessagesWrap>
-				{messagesAndUsers && messagesAndUsers.map(m=> <MessagesItem key={m.id} message={m}/>)}
+				{messagesAndUsers.length > 0
+					? <TransitionGroup>
+						{messagesAndUsers.map(m => (
+							<CSSTransition key={m.id}
+														 timeout={300}
+														 classNames="item"
+														 mountOnEnter>
+								<MessagesItem message={m}/>
+							</CSSTransition>
+						))}
+					</TransitionGroup>
+					: <h3 className='messages-wrap__title'>Будте первыми</h3>}
+				<div className='chat__scroll' ref={ref}/>
 			</MessagesWrap>
-
-			<ChatForm>
-
-			</ChatForm>
+			<ChatForm onMessage={onMessage} roomId={id}/>
 		</div>
 	)
 }

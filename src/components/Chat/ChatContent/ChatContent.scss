@@ -1,7 +1,47 @@
-.chat{
-	&__content{
+.chat {
+	&__content {
 		padding: 0 0 20px 0;
 		display: flex;
 		flex-direction: column;
 	}
+
+	&__scroll {
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+.messages-wrap__title {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 40px;
+	color: white;
+}
+
+.messages-wrap {
+	.item {
+		&-enter {
+			opacity: 0;
+		}
+
+		&-enter-active {
+			opacity: 1;
+			transition: opacity 300ms ease-in;
+		}
+
+		&-exit {
+			opacity: 1;
+		}
+
+		&-exit-active {
+			opacity: 0;
+			transition: opacity 300ms ease-in;
+		}
+	}
+
 }

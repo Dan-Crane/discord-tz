@@ -8,7 +8,7 @@ import {useStore} from "../../../hooks/store";
 export function ChatHeader(props) {
 	const {state} = useStore()
 
-	let idRoom = useLocation().pathname.split('/')[2];
+	let idRoom = useLocation().pathname.split('/')[2] || 1;
 	let test = state.rooms.find(r => r.id === +idRoom).name
 
 	return (
