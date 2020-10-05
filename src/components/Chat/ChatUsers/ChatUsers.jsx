@@ -16,6 +16,7 @@ export function ChatUsers(props) {
 
 	const [activeUser, setActiveUser] = useState(null)
 	const [valueNode, setValueNode] = useState('')
+	const [valueMessage, setValueMessage] = useState('')
 
 	useEffect(() => {
 		setActiveUser(state.activeUser)
@@ -43,16 +44,25 @@ export function ChatUsers(props) {
 					</span>
 						</div>
 						<div className='chat-users-popup__body'>
-							<span className='chat-users-popup__role-head'>{state.activeUser && state.activeUser.role ? 'Роль' : 'Нет ролей'}</span>
-							{state.activeUser && state.activeUser.role && <span className='chat-users-popup__role-body'>{state.activeUser && state.activeUser.role}</span>}
+							<span
+								className='chat-users-popup__role-head'>{state.activeUser && state.activeUser.role ? 'Роль' : 'Нет ролей'}</span>
+							{state.activeUser && state.activeUser.role &&
+							<span className='chat-users-popup__role-body'>{state.activeUser && state.activeUser.role}</span>}
 							<span className='chat-users-popup__node-head'>Заметка</span>
 							<input className='chat-users-popup__node-body'
 										 placeholder='Нажмите чтобы добавить заметку'
 										 value={valueNode}
 										 onChange={(e) => setValueNode(e.target.value)}
 										 onBlur={() => onEdit(state.activeUser.id, valueNode)}/>
-							<input className='chat-users-popup__message'
-										 placeholder='Введите сообдение'/>
+							<form onSubmit={e => {
+								e.preventDefault()
+								setValueMessage('')
+							}}>
+								<input className='chat-users-popup__message'
+											 value={valueMessage}
+											 onChange={(e) => setValueMessage(e.target.value)}
+											 placeholder='Введите сообдение'/>
+							</form>
 						</div>
 					</div>
 				</CSSTransition>
