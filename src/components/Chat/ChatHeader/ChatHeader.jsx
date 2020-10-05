@@ -8,8 +8,8 @@ import {useStore} from "../../../hooks/store";
 export function ChatHeader(props) {
 	const {state} = useStore()
 
-	let idRoom = useLocation().pathname.split('/')[2] || 1;
-	let test = state.rooms.find(r => r.id === +idRoom).name
+	let idRoom = useLocation().pathname.split('/')[2] || null
+	let test = idRoom ? state.rooms.find(r => r.id === +idRoom).name : 'Выберите компнату'
 
 	return (
 		<div className='content__header'>
