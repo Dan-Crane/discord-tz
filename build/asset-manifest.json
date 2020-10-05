@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ff857de4.chunk.css",
+    "main.js": "/static/js/main.b5ebf09e.chunk.js",
+    "main.js.map": "/static/js/main.b5ebf09e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8fa676d4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8fa676d4.js.map",
+    "static/js/2.d20a69ca.chunk.js": "/static/js/2.d20a69ca.chunk.js",
+    "static/js/2.d20a69ca.chunk.js.map": "/static/js/2.d20a69ca.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7370ca1d655f799df0dcee8ffbb79967.js": "/precache-manifest.7370ca1d655f799df0dcee8ffbb79967.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ff857de4.chunk.css.map": "/static/css/main.ff857de4.chunk.css.map",
+    "static/js/2.d20a69ca.chunk.js.LICENSE.txt": "/static/js/2.d20a69ca.chunk.js.LICENSE.txt",
+    "static/media/stylesheet.css": "/static/media/Whitney-Medium.a37b6d9d.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8fa676d4.js",
+    "static/js/2.d20a69ca.chunk.js",
+    "static/css/main.ff857de4.chunk.css",
+    "static/js/main.b5ebf09e.chunk.js"
+  ]
+}
